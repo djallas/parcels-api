@@ -1,18 +1,17 @@
 require 'coveralls'
 Coveralls.wear!
-language: js
-script: npm start
-
-gem 'coveralls', require: false
-
 language: node_js
-node_js:
-  - "5.5.0"
-addons:
+  addons:
     code_climate:
         repo_token: DhrCpnTFVMsuZ7CYVNOK0kursh7cnA5WX
-script: istanbul cover node_modules/mocha/bin/_mocha -- -R spec
-before_script:
-  - npm install codeclimate-test-reporter istanbul -g
-after_script:
-  - codeclimate-test-reporter < ./coverage/lcov.info
+      sudo: false
+      node_js:
+        - 10
+        - 9
+        - 8
+        - 7
+        - 6
+      install:
+        - cd istanbul-mocha && npm install && cd ..
+      script:
+        - cd istanbul-mocha && npm test
