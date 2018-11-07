@@ -5,13 +5,6 @@ language: node_js
     code_climate:
         repo_token: DhrCpnTFVMsuZ7CYVNOK0kursh7cnA5WX
       sudo: false
-      node_js:
-        - 10
-        - 9
-        - 8
-        - 7
-        - 6
-      install:
-        - cd istanbul-mocha && npm install && cd ..
-      script:
-        - cd istanbul-mocha && npm test
+      node_js: 5.6.0:
+      before_install:
+      - npm i -g npm
