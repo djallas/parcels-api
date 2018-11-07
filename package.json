@@ -1,0 +1,33 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "node_modules/jasmine/bin/jasmine.js"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Gilles Kagarama",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "joi": "^14.0.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-http": "^1.0.0",
+    "jasmine": "^3.3.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.6",
+    "request": "^2.88.0",
+    "should": "^13.2.3",
+    "superagent": "^4.0.0-beta.5"
+  }
+}
