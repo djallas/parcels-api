@@ -1,2 +1,7 @@
+require 'coveralls'
+Coveralls.wear!
 language: js
 script: npm start
+
+repo_token: DhrCpnTFVMsuZ7CYVNOK0kursh7cnA5WX
+gem 'coveralls', require: false
