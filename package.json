@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "mocha"
+    "test": "nyc --require babel-core/resiter mocha tests/test.js --exist",
+    "coverage": "nyc report --reporter=text-lcov | coverall"
   },
   "keywords": [
     "node",
@@ -21,6 +22,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "chai": "^3.2.0",
     "chai-http": "^1.0.0",
     "mocha": "^5.2.0",
