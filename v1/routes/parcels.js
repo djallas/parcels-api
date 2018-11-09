@@ -5,15 +5,16 @@ const router = express.Router();
 const parcels = require('./../../data/parcels');
 
 // GET list of all parcels
-router.get('/', (req, res, next) =>{
+router.get('/', (req, res, next) =>{ 
     res.status(200).send({
         parcels: parcels
-    })
+    });
 });
+
 
 //GET parcel details
 router.get('/:id', (req, res, next) =>{
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id);    
     parcels.map((parcel) => {
         if(parcel.id === id){
             return res.status(200).send({
@@ -21,6 +22,7 @@ router.get('/:id', (req, res, next) =>{
             });
         }
     });
+    req.setTimeout(500);
 });
 
 
@@ -56,7 +58,7 @@ router.post('/', (req, res, next) =>{
     }
     const parcel = {
         id: parcels.length + 1,
-        id_user: req.body.id_user,
+        id_client: req.body.id_client,
         id_postman: req.body.id_postman,
         title: req.body.title,
         description: req.body.description,
@@ -76,7 +78,7 @@ router.post('/', (req, res, next) =>{
 function validateParcel(parcel){
     const schema = {
         id: Joi.number().required(),
-        id_user: Joi.number(),
+        id_client: Joi.number(),
         id_postman: Joi.number(),
         title: Joi.string().min(3).max(60).required(),
         description: Joi.string().min(10).max(300),

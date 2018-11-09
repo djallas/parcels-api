@@ -1,16 +1,6 @@
 require 'coveralls'
 Coveralls.wear!
 language: node_js
-  addons:
-    code_climate:
-        repo_token: DhrCpnTFVMsuZ7CYVNOK0kursh7cnA5WX
-      sudo: false
-      node_js: 5.6.0:
-      before_install:
-      - npm i npm
-      install:
-        - git fetch --unshallow --tags      
-      git:
-        depth: false
-      notifications:
-        email: false
+node_js:
+  - "iojs"
+  - "7"
